@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap to Play Audio</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        img {
+    width: 1000px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <img src="An.jpg" alt="Tap to play audio" id="playImage">
+    <audio id="audio" src="Mangal_bhavan_amangal_hari_drabahu_sudasarath_achar_bihari_Ra.mp3"></audio>
+
+    <script>
+        document.getElementById("playImage").addEventListener("click", function() {
+            var audio = document.getElementById("audio");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        });
+    </script>
+</body>
+</html>
